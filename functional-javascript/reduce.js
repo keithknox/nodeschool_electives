@@ -38,14 +38,14 @@
 // ## Boilerplate
 //
    function countWords(inputWords) {
-         return inputWords.reduce(function(a,b){
-               if(!a[b]){
-                     a[b]=1
-               } else {
-                     a[b] = a[b]+1;
-               }
-               return a;
-         }, {});
+      return inputWords.reduce(function(wordCount, inputWord){
+        if(inputWord in wordCount){
+          wordCount[inputWord]++;
+        } else {
+          wordCount[inputWord] = 1;
+        }
+        return wordCount;
+      }, {});
    }
 
    module.exports = countWords
@@ -56,10 +56,9 @@
 // » To verify your program, run: functional-javascript verify program.js
 // » For help run: functional-javascript help
 
-// 
-// input:      [ 'veniam', 'ipsum', 'veniam', 'non', 'veniam', 'sunt', 'laborum', 'excepteur', 'anim', 'laborum', 'magna', 'mollit', 'veniam', 'id', 'quis', 'qui', 'amet', 'amet', 'cillum', 'eu', 'consequat', 'do', 'ex', 'ea', 'ullamco', 'velit', 'labore', 'enim', 'ipsum', 'culpa', 'et', 'anim', 'dolore', 'excepteur', 'aliqua', 'deserunt', 'ea', 'voluptate', 'excepteur', 'cillum', 'consequat', 'magna', 'ea', 'veniam', 'magna', 'irure', 'magna', 'ea' ]
-// submission: { veniam: 5, ipsum: 2, non: 1, sunt: 1, laborum: 2, excepteur: 3, anim: 2, magna: 4, mollit: 1, id: 1, quis: 1, qui: 1, amet: 2, cillum: 2, eu: 1, consequat: 2, do: 1, ex: 1, ea: 4, ullamco: 1, velit: 1, labore: 1, enim: 1, culpa: 1, et: 1, dolore: 1, aliqua: 1, deserunt: 1, voluptate: 1, irure: 1 }
-// solution:   { veniam: 5, ipsum: 2, non: 1, sunt: 1, laborum: 2, excepteur: 3, anim: 2, magna: 4, mollit: 1, id: 1, quis: 1, qui: 1, amet: 2, cillum: 2, eu: 1, consequat: 2, do: 1, ex: 1, ea: 4, ullamco: 1, velit: 1, labore: 1, enim: 1, culpa: 1, et: 1, dolore: 1, aliqua: 1, deserunt: 1, voluptate: 1, irure: 1 }
+// input:      [ 'dolor', 'deserunt', 'ullamco', 'sint', 'dolore', 'ea', 'id', 'minim', 'minim', 'ad', 'ut', 'velit', 'laborum', 'laborum', 'cupidatat', 'amet', 'est', 'nostrud', 'aliqua', 'commodo', 'velit', 'et', 'nisi', 'cillum', 'minim', 'magna', 'laborum', 'incididunt', 'lorem', 'do', 'quis', 'nostrud', 'nisi', 'adipisicing', 'nisi', 'qui', 'est', 'tempor', 'officia', 'in', 'excepteur', 'incididunt', 'id', 'ea', 'aliquip', 'aliqua', 'ipsum' ]
+// submission: { dolor: 1, deserunt: 1, ullamco: 1, sint: 1, dolore: 1, ea: 2, id: 2, minim: 3, ad: 1, ut: 1, velit: 2, laborum: 3, cupidatat: 1, amet: 1, est: 2, nostrud: 2, aliqua: 2, commodo: 1, et: 1, nisi: 3, cillum: 1, magna: 1, incididunt: 2, lorem: 1, do: 1, quis: 1, adipisicing: 1, qui: 1, tempor: 1, officia: 1, in: 1, excepteur: 1, aliquip: 1, ipsum: 1 }
+// solution:   { dolor: 1, deserunt: 1, ullamco: 1, sint: 1, dolore: 1, ea: 2, id: 2, minim: 3, ad: 1, ut: 1, velit: 2, laborum: 3, cupidatat: 1, amet: 1, est: 2, nostrud: 2, aliqua: 2, commodo: 1, et: 1, nisi: 3, cillum: 1, magna: 1, incididunt: 2, lorem: 1, do: 1, quis: 1, adipisicing: 1, qui: 1, tempor: 1, officia: 1, in: 1, excepteur: 1, aliquip: 1, ipsum: 1 }
 //
 // # PASS
 //
@@ -79,5 +78,5 @@
 //
 // ────────────────────────────────────────────────────────────────────────────────
 //
-// You have 12 challenges left.
+// You have 11 challenges left.
 // Type 'functional-javascript' to show the menu.

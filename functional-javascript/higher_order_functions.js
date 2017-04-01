@@ -41,12 +41,13 @@
 //
 // ## Boilerplate
 //
-//    function repeat(operation, num) {
-//      // SOLUTION GOES HERE
-//    }
-//
-//    // Do not remove the line below
-//    module.exports = repeat
+   function repeat(operation, num) {
+     if( num<=0) return operation()
+     return repeat(operation, --num)
+   }
+
+   // Do not remove the line below
+   module.exports = repeat
 //
 //
 // » To print these instructions again, run: functional-javascript print
@@ -54,42 +55,30 @@
 // » To verify your program, run: functional-javascript verify program.js
 // » For help run: functional-javascript help
 
-
-      function repeat(operation, num){
-            if (num <= 0) return operation()
-            return repeat(operation, --num)
-      }
-
-      module.exports = repeat
-
-
-      // ------------------------
-      // Called function 1 times.
-      // ------------------------
-      // Called function 1 times.
-      // Called function 2 times.
-      // Called function 3 times.
-      // Called function 4 times.
-      // Called function 5 times.
-      // Called function 6 times.
-      // Called function 7 times.
-      //
-      // # PASS
-      //
-      // Your solution to Higher Order Functions passed!
-      //
-      // Here's the official solution in case you want to compare notes:
-      //
-      // ────────────────────────────────────────────────────────────────────────────────
-      //     function repeat(operation, num) {
-      //       if (num <= 0) return
-      //       operation()
-      //       return repeat(operation, --num)
-      //     }
-      //
-      //     module.exports = repeat
-      //
-      // ────────────────────────────────────────────────────────────────────────────────
-      //
-      // You have 13 challenges left.
-      // Type 'functional-javascript' to show the menu.
+// ------------------------
+// Called function 1 times.
+// ------------------------
+// Called function 1 times.
+// Called function 2 times.
+// Called function 3 times.
+// Called function 4 times.
+//
+// # PASS
+//
+// Your solution to Higher Order Functions passed!
+//
+// Here's the official solution in case you want to compare notes:
+//
+// ────────────────────────────────────────────────────────────────────────────────
+//     function repeat(operation, num) {
+//       if (num <= 0) return
+//       operation()
+//       return repeat(operation, --num)
+//     }
+//
+//     module.exports = repeat
+//
+// ────────────────────────────────────────────────────────────────────────────────
+//
+// You have 11 challenges left.
+// Type 'functional-javascript' to show the menu.

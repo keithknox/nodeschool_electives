@@ -43,11 +43,15 @@
 //
 // ## Boilerplate
 //
-//    function getShortMessages(messages) {
-//      // SOLUTION GOES HERE
-//    }
-//
-//    module.exports = getShortMessages
+   function getShortMessages(messages) {
+     return messages.map(function(x){
+       return x.message
+     }).filter(function(y){
+       return y.length < 50;
+     })
+     }
+
+   module.exports = getShortMessages
 //
 //
 // » To print these instructions again, run: functional-javascript print
@@ -55,37 +59,25 @@
 // » To verify your program, run: functional-javascript verify program.js
 // » For help run: functional-javascript help
 
-
-      function getShortMessages(messages){
-            return messages.map(function(x)
-                  {return x.message}).filter(function(y){
-                  if (y.length < 50){
-                        return y
-                  }
-            })
-      }
-
-      module.exports = getShortMessages
-      // 
-      // submission: [ 'Amet labore Lorem duis eu proident ad officia ad.', 'Sit sunt sunt laborum in tempor fugiat.', 'Aute amet anim officia magna occaecat dolor.', 'Laboris nulla dolore est amet deserunt do duis.' ]
-      // solution:   [ 'Amet labore Lorem duis eu proident ad officia ad.', 'Sit sunt sunt laborum in tempor fugiat.', 'Aute amet anim officia magna occaecat dolor.', 'Laboris nulla dolore est amet deserunt do duis.' ]
-      //
-      // # PASS
-      //
-      // Your solution to Basic: Filter passed!
-      //
-      // Here's the official solution in case you want to compare notes:
-      //
-      // ────────────────────────────────────────────────────────────────────────────────
-      //     module.exports = function getShortMessages(messages) {
-      //       return messages.filter(function(item) {
-      //         return item.message.length < 50
-      //       }).map(function(item) {
-      //         return item.message
-      //       })
-      //     }
-      //
-      // ────────────────────────────────────────────────────────────────────────────────
-      //
-      // You have 13 challenges left.
-      // Type 'functional-javascript' to show the menu.
+// submission: [ 'Sunt enim enim elit voluptate labore cillum.', 'Consequat irure in Lorem sint culpa id.', 'Amet sint non ex do veniam Lorem occaecat.', 'Incididunt exercitation consequat elit non.' ]
+// solution:   [ 'Sunt enim enim elit voluptate labore cillum.', 'Consequat irure in Lorem sint culpa id.', 'Amet sint non ex do veniam Lorem occaecat.', 'Incididunt exercitation consequat elit non.' ]
+//
+// # PASS
+//
+// Your solution to Basic: Filter passed!
+//
+// Here's the official solution in case you want to compare notes:
+//
+// ────────────────────────────────────────────────────────────────────────────────
+//     module.exports = function getShortMessages(messages) {
+//       return messages.filter(function(item) {
+//         return item.message.length < 50
+//       }).map(function(item) {
+//         return item.message
+//       })
+//     }
+//
+// ────────────────────────────────────────────────────────────────────────────────
+//
+// You have 11 challenges left.
+// Type 'functional-javascript' to show the menu.

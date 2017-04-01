@@ -52,13 +52,17 @@
 //
 // ## Boilerplate
 //
-//    function checkUsersValid(goodUsers) {
-//      return function allUsersValid(submittedUsers) {
-//       // SOLUTION GOES HERE
-//      };
-//    }
-//
-//    module.exports = checkUsersValid
+   function checkUsersValid(goodUsers) {
+       return function allUsersValid(submittedUsers) {
+         return submittedUsers.every(function(submittedUser){
+           return goodUsers.some(function(goodUser){
+             return submittedUser.id == goodUser.id;
+           })
+         })
+   }
+
+}
+   module.exports = checkUsersValid
 //
 //
 // » To print these instructions again, run: functional-javascript print
@@ -66,10 +70,27 @@
 // » To verify your program, run: functional-javascript verify program.js
 // » For help run: functional-javascript help
 
-      function checkUsersValid(goodUsers){
-            return function allUsersValid(submittedUsers){
-
-            };
-      }
-
-      module.exports = checkUsersValid
+// submission: 'found 5 good lists!'
+// solution:   'found 5 good lists!'
+//
+// # PASS
+//
+// Your solution to Basic: Every Some passed!
+//
+// Here's the official solution in case you want to compare notes:
+//
+// ────────────────────────────────────────────────────────────────────────────────
+//     module.exports = function checkUsersValid(goodUsers) {
+//       return function allUsersValid(submittedUsers) {
+//         return submittedUsers.every(function(submittedUser) {
+//           return goodUsers.some(function(goodUser) {
+//             return goodUser.id === submittedUser.id
+//           })
+//         })
+//       }
+//     }
+//
+// ────────────────────────────────────────────────────────────────────────────────
+//
+// You have 11 challenges left.
+// Type 'functional-javascript' to show the menu.

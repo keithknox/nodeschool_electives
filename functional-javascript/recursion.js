@@ -1,3 +1,5 @@
+// FUNCTIONAL JAVASCRIPT IS GOOD
+// ───────────────────────────────
 // Basic: Recursion
 // Exercise 7 of 18
 //
@@ -22,7 +24,21 @@
 // Implement Array#reduce using recursion.
 //
 // To test your reduction works correctly we will use your reduce implementation to execute our solution to the previous basic_reduce problem. i.e. your reduce function will be passed an array of words, and a function, and an initial value which will return an object containing the counts for each word found in the array. You don't need to implement this functionality, it will be supplied to your reduce implementation.
+
+// reduce solution:
+// function countWords(inputWords) {
+//    return inputWords.reduce(function(wordCount, inputWord){
+//      if(inputWord in wordCount){
+//        wordCount[inputWord]++;
+//      } else {
+//        wordCount[inputWord] = 1;
+//      }
+//      return wordCount;
+//    }, {});
+// }
 //
+// module.exports = countWords
+
 // For simplicity, your implementation of reduce need not replicate the behaviour of a reduce missing an initial value. You may assume the initial value will always be supplied.
 //
 // ## Arguments
@@ -54,13 +70,14 @@
 //
 // ## Boilerplate
 //
-//    function reduce(arr, fn, initial) {
-//      // SOLUTION GOES HERE
-//    }
-//
-//    module.exports = reduce
-//
-//
+   function reduce(arr, fn, initial) {
+     
+
+   }
+
+   module.exports = reduce
+
+
 // » To print these instructions again, run: functional-javascript print
 // » To execute your program in a test environment, run: functional-javascript run program.js
 // » To verify your program, run: functional-javascript verify program.js

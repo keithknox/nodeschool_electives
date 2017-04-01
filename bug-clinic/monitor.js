@@ -41,34 +41,34 @@
 //
 // Here is a program with a problem:
 //
-  // module.exports = scenario;
-  //
-  // function scenario(log, cb) {
-  //   function start() {
-  //     process.nextTick(thing);
-  //   }
-  //
-  //   var value = 97;
-  //
-  //   function foo() {
-  //     value *= 13;
-  //     cb(value);
-  //   }
-  //
-  //   start();
-  //
-  //   function racer() {
-  //     value &= 255;
-  //     setTimeout(foo, 0);
-  //   }
-  //
-  //   value = 213;
-  //
-  //   function thing() {
-  //     value += 131;
-  //     process.nextTick(racer);
-  //   }
-  // }
+  module.exports = scenario;
+
+  function scenario(log, cb) {
+    function start() {
+      process.nextTick(thing);
+    }
+
+    var value = 97;
+
+    function foo() {
+      value *= 13;
+      cb(value);
+    }
+
+    start();
+
+    function racer() {
+      value &= 255;
+      setTimeout(foo, 0);
+    }
+
+    value = 213;
+
+    function thing() {
+      value += 131;
+      process.nextTick(racer);
+    }
+  }
 
 // Here is how to attack the problem using logging to debug:
 //
